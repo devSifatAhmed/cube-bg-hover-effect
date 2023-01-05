@@ -1,117 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
-    <title>
-      Cubic Background Hover Effect By Sifat Ahmed and updated by Nazmus Sayad
-    </title>
 
-    <style>
-      :root {
-        --primary-color: #52de97;
-        --secondary-color: #181d31;
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title>Cubic Background Hover Effect By Sifat Ahmed</title>
+</head>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: var(--secondary-color);
-      }
-
-      .container {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-wrap: wrap;
-        border: 1px solid #52de9838;
-      }
-
-      .box {
-        --box-num: 50;
-        width: calc((100vw - 2px) / var(--box-num));
-        height: calc((100vw - 2px) / var(--box-num));
-        border: 1px solid #52de9838;
-        transition-duration: 2.5s;
-      }
-
-      .box.active {
-        background: var(--primary-color);
-        transition-duration: 0s;
-      }
-
-      @media (max-width: 1400px) {
-        .box {
-          --box-num: 45;
-        }
-      }
-      @media (max-width: 1300px) {
-        .box {
-          --box-num: 40;
-        }
-      }
-      @media (max-width: 1200px) {
-        .box {
-          --box-num: 35;
-        }
-      }
-      @media (max-width: 1050px) {
-        .box {
-          --box-num: 30;
-        }
-      }
-      @media (max-width: 900px) {
-        .box {
-          --box-num: 25;
-        }
-      }
-      @media (max-width: 750px) {
-        .box {
-          --box-num: 20;
-        }
-      }
-      @media (max-width: 600px) {
-        .box {
-          --box-num: 17;
-        }
-      }
-      @media (max-width: 450px) {
-        .box {
-          --box-num: 14;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
     <div class="container"></div>
 
+    <style>
+        :root {
+            --primary-color: #52DE97;
+            --secondary-color: #181D31;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--secondary-color);
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #52de9838;
+        }
+
+        .box {
+            --box-num: 50;
+            width: calc((100vw - 2px) / var(--box-num));
+            height: calc((100vw - 2px) / var(--box-num));
+            border: 1px solid #52de9838;
+            transition-duration: 2.5s;
+        }
+
+        .box:hover {
+            background: var(--primary-color);
+            transition-duration: 0s;
+        }
+
+        @media(max-width: 1400px) {
+            .box {
+                --box-num: 45;
+            }
+        }
+        @media(max-width: 1300px) {
+            .box {
+                --box-num: 40;
+            }
+        }
+        @media(max-width: 1200px) {
+            .box {
+                --box-num: 35;
+            }
+        }
+        @media(max-width: 1050px) {
+            .box {
+                --box-num: 30;
+            }
+        }
+        @media(max-width: 900px) {
+            .box {
+                --box-num: 25;
+            }
+        }
+        @media(max-width: 750px) {
+            .box {
+                --box-num: 20;
+            }
+        }
+        @media(max-width: 600px) {
+            .box {
+                --box-num: 17;
+            }
+        }
+        @media(max-width: 450px) {
+            .box {
+                --box-num: 14;
+            }
+        }
+    </style>
+
     <script>
-      const boxs = Array(1500)
-        .fill()
-        .map(() => {
-          const box = document.createElement('div')
-          box.classList.add('box')
+        const boxs = Array(1500)
+          .fill()
+          .map(() => {
+            const box = document.createElement('div')
+            box.classList.add('box')
+  
+            return box
+          })
+  
+        document.querySelector('.container').append(...boxs)
+      </script>
+</body>
 
-          box.onpointerenter = () => {
-            box.classList.add('active')
-          }
-
-          box.onpointerout = () => {
-            box.classList.remove('active')
-          }
-
-          return box
-        })
-
-      document.querySelector('.container').append(...boxs)
-    </script>
-  </body>
 </html>
